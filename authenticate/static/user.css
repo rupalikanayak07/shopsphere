@@ -1,0 +1,113 @@
+.card {
+    height: 75vh;
+    width: 40%;
+    box-shadow:
+        0 4px 10px rgba(150, 90, 120, 0.18),
+        0 12px 30px rgba(150, 90, 120, 0.22);
+
+    margin-top: 50px;
+    border-radius: 15px;
+
+    h1 {
+        color: #6A1B9A;
+
+    }
+
+}
+
+input {
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    border-radius: 15px;
+    border: none;
+
+}
+
+button {
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #C06C84;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+
+form {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    b {
+        font-size: large;
+
+    }
+
+    a {
+        font-size: x-large;
+        text-decoration: none;
+        color: #8E24AA;
+    }
+}
+
+.login_card {
+    height: 60vh;
+    width: 30%;
+
+    form {
+
+        gap: 30px;
+    }
+
+    .text {
+        padding: 10px;
+        height: 20%;
+        width: 100%;
+
+    }
+
+    .input-field {
+        height: 70%;
+        width: 100%;
+        
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.error{
+    margin-top: 30px;
+    color: #B23A48;
+  
+}
+
+.profile{
+    margin-top: 60px;
+    height: 40vh;
+    width: 35%;
+    background-color: rgba(255, 255, 255, 0.699);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    border-radius: 15px;
+    
+    
+    p{
+        
+        font-size: large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+}

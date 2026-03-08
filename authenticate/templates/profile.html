@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'user.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <div class="profile">
+     <p>Name : {{request.user.first_name }} {{ request.user.last_name }}</p>
+
+        <p> email: {{request.user.email }}</p>
+
+        <p> username : {{ request.user.username}}</p>
+       
+    
+    <a href="{% url 'update' request.user.id %}">update profile</a>
+
+</div>
+</center>
+
+
+{% endblock %}

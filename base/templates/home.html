@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<div class="category">
+    {% for i in category %}
+    <form action="">
+        <input type="submit" name="cat" value="{{i}}" class=" btn">
+    </form>
+    {% endfor %}
+    <a href="{% url 'home' %}">all products</a>
+</div>
+
+{% if nomatch %}
+<h1>no records</h1>
+{% endif %}
+<center>
+   <div class="product">
+        {% for i in data %}
+
+            <div class="card">
+               
+                    {% if trend %}
+                    <div class="trend">
+                    <p>trending now.!</p>
+                    </div>
+                    {% endif %}
+            
+                    {% if offer %}
+                    <div class="off">
+                    <p>50% off.!</p>
+                    </div> 
+                    {% endif %}
+            
+
+                    <img src="{{i.pimages.url}}">
+                
+                    <div class="desc">
+                        {{i.pname}}
+                
+                    <div class="price">Rs: {{i.price}} </div>
+                    </div>
+                
+                    <div class="card-btn">
+                        <a href="{% url 'addtocart' i.id %}" >add to cart</a>
+                        <a href="">details</a>
+                    </div>
+
+            </div>
+        {% endfor %}
+   </div>
+
+</center>
+{% endblock %}

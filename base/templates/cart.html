@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<center>
+    <table border="1">
+        <tr>
+            <th>Sr.NO</th>
+            <th>product name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total price</th>
+            <th>remove</th>
+        </tr>
+        {% for item in cartproducts %}
+        <tr>
+            <td> {{item.id}} </td>
+            <td>{{item.pname}} </td>
+            <td>{{item.product}} </td>
+            <td>{{item.price}} </td>
+            <td><a href="{% url 'decrease' item.id %}">-</a>{{item.quantity}} <a href="{% url 'increase' item.id %}">+</a> </td>
+
+            <td>{{item.totalprice}} </td>
+            <td><a href="{% url 'remove' item.id %}">Remove </a></td>
+
+        </tr>
+        
+       
+        {% endfor %}
+    </table>
+    <div class="cart">
+        <h1>Total price: {{TA}} </h1>
+    </div>
+</center>
+
+
+{% endblock %}

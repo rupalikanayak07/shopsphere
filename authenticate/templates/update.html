@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<center>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">first name</label>
+        <input type="text" name="first_name" id="" value="{{data.first_name}}"> <br>
+
+        <label for="">last name</label>
+        <input type="text" name="last_name" id="" value="{{data.last_name}}"> <br>
+
+        <label for="">email </label>
+        <input type="email" name="email" id="" value="{{data.email}}"> <br>
+
+        <label for="">user name</label>
+        <input type="text" name="username" id="" value="{{data.username}}" readonly> <br>
+
+       
+
+        <br> <button type="submit">submit</button>
+
+
+    </form>
+
+    <a href="{% url 'reset_pass' %}"> reset password </a>
+</center>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'user.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<center>
+    {% if status %}
+    <h2>invalid username or password</h2>
+    {% endif %}
+
+    <div class="error">
+        <h1>{{ status }}</h1>
+    </div>
+
+
+    <div class="card login_card">
+
+        <form action="" method="POST">
+            <div class="text">
+                <h1>Welcome to Shop sphere</h1>
+                
+            </div>
+
+            {% csrf_token %}
+
+            <div class="input-field">
+                <input type="text" name="username" id="" placeholder="Enter your Username">
+
+                <input type="password" name="password" id="" placeholder="Enter your password">
+
+
+                <button type="submit">Let’s Go</button>
+            </div>
+
+        <a href="{% url 'forget_pass' %}">forget password</a>
+
+        </form>
+    </div>
+</center>
+
+{% endblock %}
