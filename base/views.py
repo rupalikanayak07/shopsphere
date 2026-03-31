@@ -126,9 +126,6 @@ def details(request):
 
 def orderplaced(request):
     cartproducts = cartmodel.objects.filter(host=request.user)
-
-   
-
     total_amount = sum(item.totalprice for item in cartproducts)
 
     if request.method == "POST":
@@ -169,5 +166,8 @@ def orderplaced(request):
 
     return redirect('checkout')
 def orderhistory(request):
-    return render (request,'orderhistory.html')
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+    return render (request,'orderhistory.html', {
+        'orders': orders
+    })
 

@@ -17,7 +17,7 @@
         <!-- HEADER -->
         <div class="order-header">
             <div>
-                <p><strong>Order ID:</strong> {{ order.id }}</p>
+                <p><strong>Order ID:</strong> #{{ order.id }}</p>
                 <p class="date">{{ order.created_at }}</p>
             </div>
 
@@ -31,15 +31,18 @@
             {% for item in order.items.all %}
             <div class="item">
 
+                <!-- IMAGE -->
                 <div class="item-left">
                     <img src="{{ item.product.pimages.url }}" alt="">
                 </div>
 
+                <!-- DETAILS -->
                 <div class="item-middle">
-                    <h4>{{ item.product.pname }}</h4>
+                    <h4>{{ item.pname }}</h4>
                     <p>Qty: {{ item.quantity }}</p>
                 </div>
 
+                <!-- PRICE -->
                 <div class="item-right">
                     ₹{{ item.totalprice }}
                 </div>
@@ -51,13 +54,12 @@
         <!-- FOOTER -->
         <div class="order-footer">
             <span>Total: ₹{{ order.total_amount }}</span>
-            <button class="view-btn">View Details</button>
         </div>
 
     </div>
 
     {% empty %}
-        <p class="empty">No orders yet 😔</p>
+        <p class="empty">No orders yet 🛒</p>
     {% endfor %}
 
 </div>
