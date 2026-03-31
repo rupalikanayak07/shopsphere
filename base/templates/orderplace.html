@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="success-container">
+
+    <div class="success-card">
+
+        <!-- ICON -->
+        <div class="success-icon">
+            ✔
+        </div>
+
+        <!-- MESSAGE -->
+        <h1>Order Placed Successfully!</h1>
+        <p class="subtitle">
+            Thank you for your purchase. Your order has been confirmed 🎉
+        </p>
+
+        <!-- OPTIONAL ORDER DETAILS -->
+        <div class="order-info">
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+            <p><strong>Total Amount:</strong> ₹{{ order.total_amount }}</p>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="actions">
+
+            <a href="{% url 'orderhistory' %}" class="btn primary">
+                View Order History
+            </a>
+
+            <a href="{% url 'home' %}" class="btn secondary">
+                Continue Shopping
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

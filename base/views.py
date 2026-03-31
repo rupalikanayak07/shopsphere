@@ -90,7 +90,7 @@ def cart(request):
     TA=0
     for i in cartproducts:
         TA+=i.totalprice
-        print(cartmodel)
+       
 
     return render(request,'cart.html',{'cartproducts':cartproducts,'TA':TA,'profile_nav':True,'cartproducts_count':cartproducts_count})
 
@@ -121,4 +121,53 @@ def decrease(request,pk):
         a.delete()
         return redirect('cart')
 
+def details(request):
+    return render (request,'details.html')
+
+def orderplaced(request):
+    cartproducts = cartmodel.objects.filter(host=request.user)
+
+   
+
+    total_amount = sum(item.totalprice for item in cartproducts)
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        state = request.POST.get('state')
+        pincode = request.POST.get('pincode')
+       
+
+        
+        full_address = f"{address}, {city}, {state} - {pincode}"
+
+        order = Order.objects.create(
+            user=request.user,
+            name=name,
+            phone=phone,
+            address=full_address,
+            total_amount=total_amount,
+            status='Placed'
+        )
+
+        # ✅ SAVE ITEMS
+        for item in cartproducts:
+            OrderItem.objects.create(
+                order=order,
+                product=item.product,
+                pname=item.pname,
+                price=item.price,
+                quantity=item.quantity,
+                totalprice=item.totalprice
+            )
+
+        cartproducts.delete()
+        return render(request, 'orderplace.html', {'order': order})
+
+    return redirect('checkout')
+def orderhistory(request):
+    return render (request,'orderhistory.html')
 
