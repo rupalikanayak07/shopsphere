@@ -1,0 +1,210 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* MAIN CONTAINER */
+.cart-container {
+    width: 85%;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.cart-items {
+    flex: 2;
+}
+
+/* CART CARD */
+.cart-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #ffffff;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+}
+
+.cart-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE CONTAINER */
+.cart-img {
+    width: 95px;
+    height: 95px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGE */
+.cart-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* perfect fit */
+}
+
+/* DETAILS */
+.cart-details {
+    flex: 1;
+}
+
+/* PRODUCT NAME */
+.cart-details h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+/* PRICE ROW */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #777;
+    font-size: 14px;
+}
+
+.total {
+    color: #ff4d6d;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* QUANTITY BOX */
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f1f1f1;
+    padding: 6px 14px;
+    border-radius: 25px;
+}
+
+/* QUANTITY BUTTONS */
+.qty-box a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: 0.2s;
+}
+
+.qty-box a:hover {
+    color: #ff4d6d;
+}
+
+/* QUANTITY TEXT */
+.qty-box span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* REMOVE BUTTON */
+.remove {
+    color: #ff4d6d;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.remove:hover {
+    text-decoration: underline;
+}
+
+/* RIGHT SIDE CHECKOUT */
+.checkout-box {
+    flex: 1;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+}
+
+/* TITLE */
+.checkout-box h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+/* SUMMARY ROW */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* FREE TEXT */
+.free {
+    color: green;
+    font-weight: 500;
+}
+
+/* TOTAL */
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0;
+    color: #000;
+}
+
+/* BUTTON */
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* EMPTY CART */
+.empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    margin-top: 50px;
+}

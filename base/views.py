@@ -72,6 +72,7 @@ def addtocart(request,pk):
     
     except:
         cartmodel.objects.create(
+            product=item,
             pname=item.pname,
             price=item.price,
             pcategory=item.pcategory,
@@ -89,6 +90,7 @@ def cart(request):
     TA=0
     for i in cartproducts:
         TA+=i.totalprice
+        print(cartmodel)
 
     return render(request,'cart.html',{'cartproducts':cartproducts,'TA':TA,'profile_nav':True,'cartproducts_count':cartproducts_count})
 

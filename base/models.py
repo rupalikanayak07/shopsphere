@@ -13,6 +13,7 @@ class product(models.Model):
 
 
 class cartmodel(models.Model):
+    product = models.ForeignKey(product, on_delete=models.CASCADE)
     pname=models.CharField(max_length=100)
     price=models.IntegerField()
     pcategory=models.CharField(max_length=100)
