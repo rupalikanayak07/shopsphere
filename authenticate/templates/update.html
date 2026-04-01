@@ -1,34 +1,49 @@
 {% extends 'main.html' %}
+{% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'user.css' %}">
+{% endblock %}
 
 {% block content %}
 
-<center>
+<div class="update-container">
 
-    <form action="" method="POST">
-        {% csrf_token %}
+    <div class="update-card">
+        <h2>Update Profile</h2>
 
-        <label for="">first name</label>
-        <input type="text" name="first_name" id="" value="{{data.first_name}}"> <br>
+        <form method="POST">
+            {% csrf_token %}
 
-        <label for="">last name</label>
-        <input type="text" name="last_name" id="" value="{{data.last_name}}"> <br>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" value="{{data.first_name}}">
+            </div>
 
-        <label for="">email </label>
-        <input type="email" name="email" id="" value="{{data.email}}"> <br>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" value="{{data.last_name}}">
+            </div>
 
-        <label for="">user name</label>
-        <input type="text" name="username" id="" value="{{data.username}}" readonly> <br>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" value="{{data.email}}">
+            </div>
 
-       
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" value="{{data.username}}" readonly class="readonly">
+            </div>
 
-        <br> <button type="submit">submit</button>
+            <button type="submit" class="submit-btn">Save Changes</button>
 
+        </form>
 
-    </form>
+        <div class="extra-links">
+            <a href="{% url 'reset_pass' %}">Reset Password</a>
+        </div>
+    </div>
 
-    <a href="{% url 'reset_pass' %}"> reset password </a>
-</center>
-
+</div>
 
 {% endblock %}
