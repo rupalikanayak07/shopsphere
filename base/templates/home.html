@@ -4,53 +4,105 @@
 
 
 
-<div class="category">
-    {% for i in category %}
-    <form action="">
-        <input type="submit" name="cat" value="{{i}}" class=" btn">
-    </form>
-    {% endfor %}
-    <a href="{% url 'home' %}">all products</a>
-</div>
+<div class="container">
 
-{% if nomatch %}
-<h1>no records</h1>
-{% endif %}
-<center>
-   <div class="product">
-        {% for i in data %}
+    <!-- CATEGORY -->
+    <div class="category">
+        {% for i in category %}
+        <form action="">
+            <input type="submit" name="cat" value="{{i}}" class="category-btn">
+        </form>
+        {% endfor %}
+        <a href="{% url 'home' %}" class="category-all">All Products</a>
+    </div>
 
+    {% if nomatch %}
+        <h2 class="no-record">No products found</h2>
+    {% endif %}
+
+    <!-- 🔥 OFFER SLIDER -->
+    <h2 class="section-title"> Special Offers</h2>
+
+    <div class="slider-wrapper">
+
+        <button class="slide-btn left" onclick="scrollLeft()">&#10094;</button>
+
+        <div class="product-slider" id="slider">
+            {% for i in data %}
             <div class="card">
-               
-                    {% if trend %}
-                    <div class="trend">
-                    <p>trending now.!</p>
-                    </div>
-                    {% endif %}
-            
-                    {% if offer %}
-                    <div class="off">
-                    <p>50% off.!</p>
-                    </div> 
-                    {% endif %}
-            
 
-                    <img src="{{i.pimages.url}}">
-                
-                    <div class="desc">
-                        {{i.pname}}
-                
-                    <div class="price">Rs: {{i.price}} </div>
-                    </div>
-                
-                    <div class="card-btn">
-                        <a href="{% url 'addtocart' i.id %}" >add to cart</a>
-                        <a href="">details</a>
-                    </div>
+                {% if offer %}
+                <div class="badge offer">50% OFF</div>
+                {% endif %}
+
+                <div class="img-box">
+                    <img src="{{i.pimages.url}}" class="product-img">
+                </div>
+
+                <div class="desc">
+                    <h3>{{i.pname}}</h3>
+                    <p class="price">₹ {{i.price}}</p>
+                </div>
+
+                <div class="card-btn">
+                    <a href="{% url 'addtocart' i.id %}" class="btn-cart">Add</a>
+                    <a href="#" class="btn-details">View</a>
+                </div>
 
             </div>
-        {% endfor %}
-   </div>
+            {% endfor %}
+        </div>
 
-</center>
+        <button class="slide-btn right" onclick="scrollRight()">&#10095;</button>
+
+    </div>
+
+    <!-- 🛍️ ALL PRODUCTS -->
+    <h2 class="section-title">🛍️ All Products</h2>
+
+    <div class="product-grid">
+        {% for i in data %}
+        <div class="card">
+
+            {% if trend %}
+            <div class="badge trend">Trending</div>
+            {% endif %}
+
+            <div class="img-box">
+                <img src="{{i.pimages.url}}" class="product-img">
+            </div>
+
+            <div class="desc">
+                <h3>{{i.pname}}</h3>
+                <p class="price">₹ {{i.price}}</p>
+            </div>
+
+            <div class="card-btn">
+                <a href="{% url 'addtocart' i.id %}" class="btn-cart">Add to Cart</a>
+                <a href="#" class="btn-details">Details</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<!-- JS -->
+<script>
+function scrollLeft() {
+    document.getElementById("slider").scrollBy({
+        left: -300,
+        behavior: "smooth"
+    });
+}
+
+function scrollRight() {
+    document.getElementById("slider").scrollBy({
+        left: 300,
+        behavior: "smooth"
+    });
+}
+</script>
+
 {% endblock %}
