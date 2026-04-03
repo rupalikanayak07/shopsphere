@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="details-page">
+
+    <div class="details-container">
+
+        <!-- IMAGE -->
+        <div class="left">
+            <img src="{{item.pimages.url}}" class="product-image">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="right">
+
+            <h1 class="name">{{item.pname}}</h1>
+
+            <p class="product-category">Category: {{item.pcategory}}</p>
+
+            <p class="price">₹ {{item.price}}</p>
+
+            <p class="product-desc">{{item.pdesc}}</p>
+
+            <div class="btn-group">
+                <a href="{% url 'addtocart' item.id %}" class="btn add">Add to Cart</a>
+                <a href="{% url 'home' %}" class="btn back">Back</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

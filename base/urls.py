@@ -12,4 +12,5 @@ urlpatterns=[
     path('details/',details,name='details'),
     path('orderplaced/',orderplaced,name='orderplaced'),
     path('orderhistory/',orderhistory,name='orderhistory'),
+    path('productdetails/<int:pk>',productdetails,name='productdetails')
 ]

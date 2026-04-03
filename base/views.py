@@ -150,7 +150,7 @@ def orderplaced(request):
             status='Placed'
         )
 
-        # ✅ SAVE ITEMS
+        #  SAVE ITEMS
         for item in cartproducts:
             OrderItem.objects.create(
                 order=order,
@@ -171,3 +171,10 @@ def orderhistory(request):
         'orders': orders
     })
 
+
+def productdetails(request,pk):
+    item= product.objects.get(id=pk)
+    print(item)
+    print(item.pname)
+
+    return render(request,'productdetails.html',{'item':item})
