@@ -42,6 +42,7 @@ nav {
 
 /* LINKS CONTAINER */
 .links {
+    width: 70%;
     display: flex;
     align-items: center;
     gap: 18px;
@@ -103,6 +104,12 @@ nav {
 }
 
 /* TRENDING / OFFER */
+.wrapper{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
 .trending,
 .offer {
     padding: 6px 12px;
@@ -162,6 +169,10 @@ nav {
         width: 70%;
         
     }
+    .wrapper{
+        width: 100%;
+        display: flex;
+    }
     .trending,.offer{
         width: 50%;
     }
@@ -199,8 +210,6 @@ nav {
 
 /* home page */
 
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* RESET */
 * {
