@@ -13,7 +13,7 @@ def login_(request):
             login(request,u)
             return redirect('home')
         else:
-            return render(request,'login_.html',{'status':True})
+            return render(request,'login_.html',{'status':True,'login_nav':True})
 
 
     return render(request,'login_.html',{'login_nav':True})
