@@ -1,24 +1,30 @@
 {% extends 'main.html' %}
+{% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'user.css' %}">
+{% endblock %}
 
 {% block content %}
-{% if error %}
-<h1>user does not exit</h1>
-{% endif %}
 
 
-<center>
-    <form action="" method="POST">
+
+<div class="login-container">
+    {% if error %}
+    <div class="error-msg">User does not exist</div>
+    {% endif %}
+    <form action="" method="POST" class="login-form">
         {% csrf_token %}
 
-        <label for=""> username:</label>
-        <input type="text" name="username" id="">
-        <br><br>
 
-        
-        <button type="submit">submit</button>
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username">
 
+        <button type="submit">Submit</button>
 
     </form>
-</center>
+
+</div>
+
+
 {% endblock %}

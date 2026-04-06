@@ -97,7 +97,7 @@ def forget_pass(request):
             
             return redirect('newpass')
         except User.DoesNotExist:
-            return render(request,'forget_pass.html',{'error':True})
+            return render(request,'forget_pass.html',{'error':True,'login_nav':True})
 
     return render(request,'forget_pass.html',{'login_nav':True})
 
@@ -113,7 +113,7 @@ def newpass(request):
         newpass= request.POST.get('password')
 
         if user.check_password(newpass):
-            return render(request,'newpass.html',{'error':'new password should not same to old password'})
+            return render(request,'newpass.html',{'error':'new password should not same to old password','login_nav':True})
         
         user.set_password(newpass)
         user.save()

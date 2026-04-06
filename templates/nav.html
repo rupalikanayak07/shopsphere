@@ -20,8 +20,8 @@
             <input type="button" value="search" class="btn">
         </form>
 
-        <!-- trending button  -->
         <div class="wrapper">
+            <!-- trending button  -->
             <form action="">
                 <input type="submit" name="trending" value="trending" class="trending">
             </form>
@@ -56,15 +56,17 @@
         </form>
 
 
-        <!-- trending button  -->
-        <form action="">
-            <input type="submit" name="trending" value="trending" class="trending">
-        </form>
+        <div class="wrapper">
+            <!-- trending button  -->
+            <form action="">
+                <input type="submit" name="trending" value="trending" class="trending">
+            </form>
 
-        <!-- offer button -->
-        <form action="">
-            <input type="submit" name="offer" value="offer" class="offer">
-        </form>
+            <!-- offer button -->
+            <form action="">
+                <input type="submit" name="offer" value="offer" class="offer">
+            </form>
+        </div>
 
         <a href="{% url 'home' %}">home</a>
         <a href="{% url 'login_' %}">login</a>

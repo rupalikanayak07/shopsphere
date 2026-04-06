@@ -1,20 +1,26 @@
 {% extends 'main.html' %}
+{% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'user.css' %}">
+{% endblock %}
 
 {% block content %}
 
-{% if error %}
-{{error}}
-{% endif %}
 
 
+    {% if error %}
+    <div class="error-msg">{{error}}</div>
+    {% endif %}
 
-<center>
-    <form action="" method="POST">
+
+<div class="login-container">
+
+    <form action="" method="POST" class="login-form">
+
         {% csrf_token %}
 
-
-        <label for="">new password:</label>
+        <label>new password:</label>
         <input type="password" name="password" id="">
 
         <br>
@@ -22,5 +28,6 @@
 
 
     </form>
-</center>
+</div>
+
 {% endblock %}

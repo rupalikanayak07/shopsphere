@@ -8,19 +8,20 @@
 {% endblock %}
 {% block content %}
 
-<center>
+
+
+
+
+<div class="body">
     {% if status %}
     <h2 style="color:red;">invalid username or password</h2>
     {% endif %}
-
-
-
     <div class="card login_card">
 
         <form action="" method="POST">
             <div class="text">
                 <h1>Welcome to Shop sphere</h1>
-                
+
             </div>
 
             {% csrf_token %}
@@ -34,10 +35,10 @@
                 <button type="submit">Let’s Go</button>
             </div>
 
-        <a href="{% url 'forget_pass' %}">forget password</a>
+            <a href="{% url 'forget_pass' %}">forget password</a>
 
         </form>
     </div>
-</center>
+</div>
 
 {% endblock %}

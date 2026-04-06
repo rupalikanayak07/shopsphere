@@ -58,11 +58,20 @@ form {
         color: #8E24AA;
     }
 }
+.body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .login_card {
+    
     height: 60vh;
     width: 30%;
-
+   
     form {
 
         gap: 30px;
@@ -293,4 +302,82 @@ body {
 
 .extra-links a:hover {
     text-decoration: underline;
+}
+
+
+/* forget password page */
+
+
+
+.login-container {
+    height: 100vh;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    flex-direction: column;
+}
+
+/* Card design */
+.login-form {
+    height: 300px;
+    width: 350px;
+    
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Label */
+.login-form label {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* Input */
+.login-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Input focus */
+.login-form input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 6px rgba(99,102,241,0.2);
+}
+
+/* Button */
+.login-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #6366f1;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+.login-form button:hover {
+    background: #4f46e5;
+}
+
+/* Error message */
+.error-msg {
+    padding-top: 10px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #ef4444;
+    margin-bottom: 15px;
+    font-size: 14px;
 }
